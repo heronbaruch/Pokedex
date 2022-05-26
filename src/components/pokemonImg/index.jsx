@@ -27,9 +27,13 @@ function PokeImg(pokeURL) {
             <p>{ pokeInfo.name }</p>
     </>
         ) : 
-        <div className="loader-wrapper">
-          <div className="loader">
-           <div className="loader loader-inner"></div>
+        <div className="pokeLoad">
+          <div className="loader-wrapper">
+            <div className="loader">
+            <div className="loader loader-inner">
+              <div className="center"></div>
+            </div>
+            </div>
           </div>
         </div>
       }

@@ -30,11 +30,15 @@ function Home(){
       </div>))
     )
    : 
+  <div className="pokeLoad">
     <div className="loader-wrapper">
-      <div className="">
-        <div className="loader loader-inner"></div>
+      <div className="loader">
+        <div className="loader loader-inner">
+          <div className="center"></div>
+        </div>
       </div>
     </div>
+  </div>
  }
     </div>
   );
