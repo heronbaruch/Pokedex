@@ -4,6 +4,7 @@ import Context from './Context';
 
 function Provider({ children }) {
   const [data, setData] = useState();
+  // const [poketInfo, setPokeInfo] = useState();
 
   const fetchData = async ()=>{
     const URL = 'https://pokeapi.co/api/v2/pokemon/';
@@ -11,15 +12,25 @@ function Provider({ children }) {
     const dataJson = await response.json();
     const { results } = dataJson;
     setData(results);
-    console.log(results);
   }
+
+  // const fetchPic = async ()=>{
+  //   const URL = 'https://pokeapi.co/api/v2/pokemon/1/';
+  //   const response = await fetch(URL);
+  //   const dataJson = await response.json();
+  //   const { sprites } = dataJson;
+  //   setPokeInfo(sprites.front_default);
+  //   console.log(dataJson);
+  // }
 
   useEffect(() => {
     fetchData();
+    // fetchPic();
   }, []);
 
   const contextValue = {
     data,
+    // poketInfo,
   };
   
   return (

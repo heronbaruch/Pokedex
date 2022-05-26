@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from 'react';
+import PokeImg from '../components/pokemonImg/index';
 import Context from '../context/Context'
+
 function Home(){
 
   const { data } = useContext(Context);
 
-useEffect(() => {
+  useEffect(() => {
 }, [data])
 
   return (
@@ -13,11 +15,7 @@ useEffect(() => {
     ( 
       data.map((pokemon, index) => (
     <div key={index}>
-      <img 
-      alt={`${pokemon.name} pic`}
-      key={index} 
-      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`}/>
-      <p>{pokemon.name}</p>
+      <PokeImg pokeURL={pokemon.url} key={index}/>
     </div>))
     )
    : <p>Loading</p> }
