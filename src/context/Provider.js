@@ -7,7 +7,7 @@ function Provider({ children }) {
   // const [poketInfo, setPokeInfo] = useState();
 
   const fetchData = async ()=>{
-    const URL = 'https://pokeapi.co/api/v2/pokemon/';
+    const URL = 'https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0';
     const response = await fetch(URL);
     const dataJson = await response.json();
     const { results } = dataJson;

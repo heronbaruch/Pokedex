@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../../CSS/loading.css'
 
 function PokeImg(pokeURL) {
   const [pokeInfo, setPokeInfo] = useState();
@@ -21,10 +22,16 @@ function PokeImg(pokeURL) {
         <>
         <img
             alt={`${pokeInfo.name} pic`}
-            src={pokeInfo.sprites.front_default}/>
+            src={pokeInfo.sprites.front_default}
+        />
             <p>{ pokeInfo.name }</p>
-        </>
-        ) : null
+    </>
+        ) : 
+        <div className="loader-wrapper">
+          <div className="loader">
+           <div className="loader loader-inner"></div>
+          </div>
+        </div>
       }
     </>
   );
