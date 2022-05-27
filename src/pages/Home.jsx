@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import PokeImg from '../components/pokemonImg/index';
 import Context from '../context/Context'
 import '../CSS/home.css'
@@ -18,16 +19,23 @@ function Home(){
     { data ?
     ( 
       data.map((pokemon, index) => (
-      <div 
-        key={index}
-        onClick={() => console.log(pokemon.url)}
-        className="pokemons"
-      >
-        <PokeImg 
+        <Link 
+          to={`/pokemon/${pokemon.name}`} 
           pokeURL={pokemon.url} 
           key={index}
-        />
-      </div>))
+        >
+          <div 
+            key={index}
+            onClick={() => console.log(pokemon.url)}
+            className="pokemons"
+            >
+            <PokeImg 
+              pokeURL={pokemon.url} 
+              key={index}
+              />
+          </div>
+        </Link>
+      ))
     )
    : 
   <div className="pokeLoad">
