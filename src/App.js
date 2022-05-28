@@ -15,7 +15,7 @@ function App() {
           component={ Home }
         />
         <Route 
-          path="/pokemon/:name"
+          path="/pokemon-detail/:name"
           component={ PokemonInfo }
         />
         <Route 

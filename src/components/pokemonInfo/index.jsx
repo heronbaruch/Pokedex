@@ -16,20 +16,55 @@ function PokemonInfo() {
     fetchPic(name);
   }, [name])
 
-  console.log(name);
+  console.log(pokeInfo.game_indices[0].version);
 
   return(
     <>
       {
         pokeInfo ?
         (
-        <>
+        <div>
+          <p>{ `${pokeInfo.name} #${pokeInfo.order}` }</p>
         <img
             alt={`${pokeInfo.name} pic`}
             src={pokeInfo.sprites.front_default}
         />
-            <p>{ pokeInfo.name }</p>
-    </>
+            {/* tipo do pokemon */}
+            <div>
+              <p>Tipo</p>
+              { 
+              pokeInfo.types.map( (type, index) => (
+                <p key={index}>{ type.type.name }</p>
+                ))
+              }
+            </div>
+            {/* renderiza status do pokemon */}
+            <div>
+              <p>Status</p>
+              { 
+              pokeInfo.stats.map( (stats, index) => (
+                <p 
+                  key={index}>{ 
+                  `${stats.stat.name}:
+                  ${ stats.base_stat }` }
+                </p>
+                ))
+              }
+            </div>
+            {/* renderiza gerações que aparece o pokemon */}
+            <div>
+              <p>Jogos:</p>
+              { 
+              pokeInfo.game_indices.map( (game, index) => (
+                <p 
+                  key={index}> 
+                  { game.version.name } 
+                </p>
+                ))
+              }
+            </div>
+            
+    </div>
         ) : 
         <div className="pokeLoad">
           <div className="loader-wrapper">
