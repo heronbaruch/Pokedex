@@ -1,0 +1,17 @@
+.bodyInfo {
+  background-color: rgb(220, 10, 45);;
+  padding-top: 0.5px;
+  padding-bottom: 0.5px;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.backgroundInfo {
+  background-color: #DEDEDE;
+  padding: 20px;
+}
+
+.screenPokemon {
+  background-color: #232323;
+  color: #DEDEDE;
+}

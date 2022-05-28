@@ -1,5 +1,7 @@
-body {
+.body {
   background-color: rgb(10 40 95);
+  padding-top: 0.5px;
+  padding-bottom: 0.5px;
 }
 
 .pokeDiv {

@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import PokeImg from '../components/pokemonImg/index';
 import Context from '../context/Context'
+import Loading from '../components/Loading';
 import '../CSS/home.css'
-import '../CSS/loading.css'
 
 function Home(){
 
@@ -13,9 +13,8 @@ function Home(){
 }, [data])
 
   return (
-    <div
-    className="pokeDiv"
-    >
+    <div className="body">
+      <div className="pokeDiv">
     { data ?
     ( 
       data.map((pokemon, index) => (
@@ -37,16 +36,9 @@ function Home(){
       ))
     )
    : 
-  <div className="pokeLoad">
-    <div className="loader-wrapper">
-      <div className="loader">
-        <div className="loader loader-inner">
-          <div className="center"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <Loading />
  }
+    </div>
     </div>
   );
 }
