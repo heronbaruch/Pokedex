@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import '../../CSS/infoPokemon.css'
 import Loading from '../Loading'
 import Pearl from '../Pearl'
+import '../../CSS/infoPokemon.css'
+import '../../CSS/typePokemon.css'
 
 function PokemonInfo() {
   const [pokeInfo, setPokeInfo] = useState();
@@ -25,7 +26,8 @@ function PokemonInfo() {
       {
         pokeInfo ?
         (
-      <div className="backgroundInfo">
+       <>
+       <div className="backgroundInfo">
         <div className="screenPokemon">
             <p>{ `${pokeInfo.name} #${pokeInfo.order}` }</p>
           <img
@@ -33,19 +35,24 @@ function PokemonInfo() {
               src={pokeInfo.sprites.front_default}
           />
         </div>
-        
-              {/* tipo do pokemon */}
+      </div>
+        {/* tipo do pokemon */}
               <div>
-                <p>Tipo</p>
+                <h3>Type</h3>
                 { 
                 pokeInfo.types.map( (type, index) => (
-                  <p key={index}>{ type.type.name }</p>
+                  <div className={ `pkm-type ${type.type.name}` }>
+                  <span key={index}>
+                    { type.type.name }
+                  </span>
+                  </div>
                   ))
                 }
               </div>
-              {/* renderiza status do pokemon */}
+          {/* renderiza status do pokemon */}
               <div>
-                <p>Status</p>
+                <h3>Status</h3>
+                <div className="">
                 { 
                 pokeInfo.stats.map( (stats, index) => (
                   <p 
@@ -54,10 +61,10 @@ function PokemonInfo() {
                     ${ stats.base_stat }` }
                   </p>
                   ))
-                }
+                }</div>
               </div>
               {/* renderiza gerações que aparece o pokemon */}
-              <div>
+              {/* <div>
                 <p>Jogos:</p>
                 { 
                 pokeInfo.game_indices.map( (game, index) => (
@@ -67,8 +74,8 @@ function PokemonInfo() {
                   </p>
                   ))
                 }
-              </div>
-      </div>
+              </div> */}
+        </>
         ) : 
         <Loading />
       }

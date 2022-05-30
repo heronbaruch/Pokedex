@@ -7,7 +7,7 @@ function Loading() {
     <div className="loader-wrapper">
       <div className="loader">
       <div className="loader loader-inner">
-        <div className="pokeballcenter"></div>
+        <div className="center"></div>
       </div>
       </div>
     </div>
