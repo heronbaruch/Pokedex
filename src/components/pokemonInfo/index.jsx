@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useParams } from "react-router-dom";
 import Loading from '../Loading'
 import Pearl from '../Pearl'
@@ -22,7 +23,9 @@ function PokemonInfo() {
   return(
 
     <div className="bodyInfo">
+      <Link to="/">
       <Pearl />
+      </Link>
       {
         pokeInfo ?
         (
@@ -41,7 +44,8 @@ function PokemonInfo() {
                 <h3>Type</h3>
                 { 
                 pokeInfo.types.map( (type, index) => (
-                  <div className={ `pkm-type ${type.type.name}` }>
+                  <div 
+                  className={ `pkm-type ${type.type.name}` } key={index}>
                   <span key={index}>
                     { type.type.name }
                   </span>

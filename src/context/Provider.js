@@ -15,15 +15,6 @@ function Provider({ children }) {
     setData(results);
   }
 
-  // const fetchPic = async ()=>{
-  //   const URL = 'https://pokeapi.co/api/v2/pokemon/1/';
-  //   const response = await fetch(URL);
-  //   const dataJson = await response.json();
-  //   const { sprites } = dataJson;
-  //   setPokeInfo(sprites.front_default);
-  //   console.log(dataJson);
-  // }
-
   useEffect(() => {
     fetchData();
     // fetchPic();
@@ -36,7 +27,7 @@ function Provider({ children }) {
   
   return (
     <Context.Provider value={ contextValue }>
-      { children }
+      { [children] }
     </Context.Provider>
 );
 }
