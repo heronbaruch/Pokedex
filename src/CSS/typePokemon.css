@@ -2,7 +2,7 @@
   font-size: 15px;
   font-family: "Trebuchet MS";
   font-weight: bold;
-  width: 6em;
+  width: 4em;
   text-align: center;
   display: inline-block;
   border: 0.1em solid transparent;
@@ -43,7 +43,7 @@
   border-top-color: #c369c3;
   border-bottom-color: #692a69;
 }
-.electrik {
+.electric {
   background-color: #f8d030;
   border-top-color: #fbe17a;
   border-bottom-color: #d4ab07;

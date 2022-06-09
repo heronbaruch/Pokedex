@@ -6,7 +6,6 @@
 
 .pokeDiv {
   flex: content;
-  flex-direction: row;
   padding: 20px;
   align-items: center;
   text-align: center;
@@ -19,10 +18,12 @@
 }
 
 .pokemons {
-  width: 130px;
-  height: 190px;
+  width: 140px;
+  height: 220px;
+  flex-direction: row;
   display: inline-block;
   background-color: rgb(255 204 0);
   border-color: rgb(213 161 0);
   border-style: outset;
+  color: black;
 }

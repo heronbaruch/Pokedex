@@ -25,6 +25,20 @@ function PokeImg(pokeURL) {
             src={pokeInfo.sprites.front_default}
         />
             <p>{ pokeInfo.name }</p>
+        
+              {/* tipo do pokemon */}
+              <div>
+                { 
+                pokeInfo.types.map( (type, index) => (
+                  <div 
+                  className={ `pkm-type ${type.type.name}` } key={index}>
+                  <span key={index}>
+                    { type.type.name }
+                  </span>
+                  </div>
+                  ))
+                }
+              </div>
     </>
         ) : 
         <div className="pokeLoad">
