@@ -30,8 +30,9 @@ function PokemonInfo() {
         pokeInfo ?
         (
        <>
+       <div className="screens">
        <div className="backgroundInfo">
-        <div className="screenPokemon">
+        <div className="screenStatus">
             <p className="name">{ `${pokeInfo.name} #${pokeInfo.order}` }</p>
           <img
               alt={`${pokeInfo.name} pic`}
@@ -39,6 +40,24 @@ function PokemonInfo() {
           />
         </div>
       </div>
+      {/* renderiza status do pokemon */}
+      {/* <h3>Status</h3> */}
+              <div className="backgroundStatus">
+                <div className="screenStatus">
+                  <div>
+                  { 
+                  pokeInfo.stats.map( (stats, index) => (
+                    <p 
+                      className="status"
+                      key={index}>{ 
+                      `${stats.stat.name}:
+                      ${ stats.base_stat }` }
+                    </p>
+                    ))
+                  }</div>
+                </div>
+              </div>
+       </div>
         {/* tipo do pokemon */}
               <div>
                 <h3>Type</h3>
@@ -52,20 +71,6 @@ function PokemonInfo() {
                   </div>
                   ))
                 }
-              </div>
-          {/* renderiza status do pokemon */}
-              <div>
-                <h3>Status</h3>
-                <div className="">
-                { 
-                pokeInfo.stats.map( (stats, index) => (
-                  <p 
-                    key={index}>{ 
-                    `${stats.stat.name}:
-                    ${ stats.base_stat }` }
-                  </p>
-                  ))
-                }</div>
               </div>
               {/* renderiza gerações que aparece o pokemon */}
               {/* <div>
