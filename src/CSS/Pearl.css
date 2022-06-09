@@ -47,3 +47,40 @@
     transform: scale(1) rotate(360deg);
   }
 }
+
+.container {
+  display: flex;
+}
+
+.redCircle {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 10px;
+  background-color: #8D061D;
+  border-radius: 50%;
+  border: 2.5px solid;
+  border-color: #DDE0DC;
+  margin: 2px;
+}
+
+.greenCircle {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 10px;
+  background-color: #316F3C;
+  border-radius: 50%;
+  border: 2.5px solid;
+  border-color: #DDE0DC;
+  margin: 2px;
+}
+
+.yellowCircle {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 10px;
+  background-color: #AE9B0A;
+  border-radius: 50%;
+  border: 2.5px solid;
+  border-color: #DDE0DC;
+  margin: 2px;
+}

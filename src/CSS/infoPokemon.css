@@ -20,6 +20,10 @@
   color: #DEDEDE;
 }
 
+.name{
+  padding-top: 8px;
+}
+
 .screenPokemon {
   background-color: #232323;
 }

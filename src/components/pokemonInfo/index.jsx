@@ -32,7 +32,7 @@ function PokemonInfo() {
        <>
        <div className="backgroundInfo">
         <div className="screenPokemon">
-            <p>{ `${pokeInfo.name} #${pokeInfo.order}` }</p>
+            <p className="name">{ `${pokeInfo.name} #${pokeInfo.order}` }</p>
           <img
               alt={`${pokeInfo.name} pic`}
               src={pokeInfo.sprites.front_default}
