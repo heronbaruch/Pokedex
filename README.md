@@ -1,2 +1,4 @@
 <h1 align="center"> Xininhodex </h1>
-![imagem da aplicação exibindo pokemon's, sua imagem nome e os tipos deles](https://user-images.githubusercontent.com/33159457/172978330-0073171f-311a-4b72-99e4-2d8cb5529b3b.jpeg)
+![imagem da aplicação exibindo pokemon's, sua imagem nome e os tipos deles](https://raw.githubusercontent.com/heronbaruch/Xininhodex/master/src/images/WhatsApp%20Image%202022-06-09%20at%2021.01.30.jpeg)
+
+Projeto com o intuito de treinar e melhorar as habilidades com as tecnologias de desenvolvimento (React.js, JavaScript, CSS, HTML), assim como requisições em API e implementações de paginas dinâmicas as quais tem links baseados em variaveis (nomes do pokemon), oque torna possivel tambem buscar alem dos 150 pokemon's iniciais aos quais estão disponiveis na pagina inicial, mudando o nome do pokemon pelo nome ou id de qualquer outro pokemon, sera buscado na API e retornara as informações do mesmo.
