@@ -59,9 +59,10 @@ function PokemonInfo() {
               </div>
        </div>
         {/* tipo do pokemon */}
-              <div>
+            <div className="typeControl">
+              <div className="typeContainer">
                 <h3>Type</h3>
-                { 
+                 <div className="type">{ 
                 pokeInfo.types.map( (type, index) => (
                   <div 
                   className={ `pkm-type ${type.type.name}` } key={index}>
@@ -70,8 +71,9 @@ function PokemonInfo() {
                   </span>
                   </div>
                   ))
-                }
+                }</div>
               </div>
+            </div>
               {/* renderiza gerações que aparece o pokemon */}
               {/* <div>
                 <p>Jogos:</p>

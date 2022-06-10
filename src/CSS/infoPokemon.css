@@ -10,6 +10,8 @@
 .screens {
   display: flex;
   flex-flow: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .backgroundInfo {
@@ -19,6 +21,7 @@
   border: 2px solid #232323;
   border-radius: 0% 0% 0% 15%;
   width: 200px;
+  height: 190px;
   align-items: center;
   text-align: center;
   color: #DEDEDE;
@@ -35,6 +38,7 @@
   border: 2px solid #232323;
   border-radius: 0% 0% 15% 0%;
   width: 200px;
+  height: 190px;
   align-items: center;
   text-align: center;
   color: #000;
@@ -52,4 +56,37 @@
   padding-top: 5px;
   margin: 0px;
   text-align: left;
+}
+
+.typeControl {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.typeContainer {
+  justify-content: center;
+  text-align: center;
+  background-color: #DEDEDE;
+  padding: 20px;
+  padding-top: 5px;
+  border: 2px solid #232323;
+  width: 350px;
+  color: black;
+}
+
+h3 {
+  justify-content: center;
+  text-align: center;
+  margin-top: -5px;
+  margin-bottom: 2px;
+}
+
+.type {
+  justify-content: center;
+  text-align: center;
+  background-color: #232323;
+  padding: 10px;
+  height: auto;
 }
