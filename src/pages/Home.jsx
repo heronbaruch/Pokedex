@@ -19,8 +19,8 @@ function Home(){
     ( 
       data.map((pokemon, index) => (
         <Link 
-          to={`/pokemon-detail/${pokemon.name}`} 
-          key={index}
+        to={`/pokemon-detail/${pokemon.name}`} 
+        key={index}
         >
           <div 
             key={index}

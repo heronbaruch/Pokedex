@@ -5,6 +5,7 @@ import Loading from '../Loading'
 import Pearl from '../Pearl'
 import '../../CSS/infoPokemon.css'
 import '../../CSS/typePokemon.css'
+import '../../CSS/favStats.css'
 
 function PokemonInfo() {
   const [pokeInfo, setPokeInfo] = useState();
@@ -19,7 +20,7 @@ function PokemonInfo() {
     }
     fetchPic(name);
   }, [name])
-  
+
   return(
 
     <div className="bodyInfo">
@@ -30,10 +31,15 @@ function PokemonInfo() {
         pokeInfo ?
         (
        <>
+      <label className="favStats">
+        <input type="checkbox" onClick={() => console.log('ok')}/>
+          <span className="checkmark"></span>
+      </label>
+
        <div className="screens">
        <div className="backgroundInfo">
         <div className="screenStatus">
-            <p className="name">{ `${pokeInfo.name} #${pokeInfo.order}` }</p>
+            <p className="name">{ `${pokeInfo.name} #${pokeInfo.id}` }</p>
           <img
               alt={`${pokeInfo.name} pic`}
               src={pokeInfo.sprites.front_default}
@@ -41,7 +47,6 @@ function PokemonInfo() {
         </div>
       </div>
       {/* renderiza status do pokemon */}
-      {/* <h3>Status</h3> */}
               <div className="backgroundStatus">
                 <div className="screenStatus">
                   <div>
