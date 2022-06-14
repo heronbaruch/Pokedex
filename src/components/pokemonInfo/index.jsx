@@ -19,7 +19,7 @@ function PokemonInfo() {
     }
     fetchPic(name);
   }, [name])
-
+  
   return(
 
     <div className="bodyInfo">
