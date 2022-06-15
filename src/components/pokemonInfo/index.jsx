@@ -6,9 +6,11 @@ import Pearl from '../Pearl'
 import '../../CSS/infoPokemon.css'
 import '../../CSS/typePokemon.css'
 import '../../CSS/favStats.css'
+import { setFavPokemon } from '../helpers/localStorage'
 
 function PokemonInfo() {
   const [pokeInfo, setPokeInfo] = useState();
+  const [savePokemon, setSavePokemon] = useState(false);
   let { name } = useParams();
 
   useEffect(() => {
@@ -21,6 +23,21 @@ function PokemonInfo() {
     fetchPic(name);
   }, [name])
 
+  const favPokemon = (savePokemon) =>{
+    setSavePokemon(savePokemon)
+    const pokemon = {
+      name: pokeInfo.name
+    }
+    console.log(pokemon);
+
+    if(savePokemon){
+      setFavPokemon(pokemon);
+      console.log('true');
+    }else {
+      console.log('false');
+    }
+  }
+
   return(
 
     <div className="bodyInfo">
@@ -32,7 +49,7 @@ function PokemonInfo() {
         (
        <>
       <label className="favStats">
-        <input type="checkbox" onClick={() => console.log('ok')}/>
+        <input type="checkbox" onClick={() => favPokemon(!savePokemon)}/>
           <span className="checkmark"></span>
       </label>
 
