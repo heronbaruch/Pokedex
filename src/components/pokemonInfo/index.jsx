@@ -10,7 +10,7 @@ import { setFavPokemon, excludePokemon } from '../helpers/localStorage'
 
 function PokemonInfo() {
   const [pokeInfo, setPokeInfo] = useState();
-  const [savePokemon, setSavePokemon] = useState(false);
+  const [savePokemon, setSavePokemon] = useState();
   let { name } = useParams();
 
   useEffect(() => {
@@ -19,24 +19,39 @@ function PokemonInfo() {
       const response = await fetch(URL);
       const dataJson = await response.json();
       setPokeInfo(dataJson);
+      verificCheck(dataJson.name)
     }
+    const verificCheck = (pokeName) => {
+      const local = localStorage.getItem('pokemon');
+      console.log(pokeName)
+      if (local) {
+        if(local.includes(pokeName)){
+          setSavePokemon(true)
+          console.log(savePokemon);
+        }else{
+          setSavePokemon(false)
+          console.log('achou não em')
+        }
+      }
+    };
     fetchPic(name);
-  }, [name])
+  }, [name, savePokemon])
 
   const favPokemon = (savePokemon) =>{
     setSavePokemon(savePokemon)
     const pokemon = {
       name: pokeInfo.name
     }
-    
     if(savePokemon){
       console.log('true');
       setFavPokemon(pokemon);
     }else {
       console.log('false');
-      excludePokemon(pokemon)
+      excludePokemon(pokemon);
     }
   }
+
+  
 
   return(
 
@@ -49,7 +64,11 @@ function PokemonInfo() {
         (
        <>
       <label className="favStats">
-        <input type="checkbox" onClick={() => favPokemon(!savePokemon)}/>
+        <input 
+          type="checkbox" 
+          onClick={() => favPokemon(!savePokemon)}
+          ischecked={ savePokemon }
+        />
           <span className="checkmark"></span>
       </label>
 
