@@ -6,7 +6,7 @@ import Pearl from '../Pearl'
 import '../../CSS/infoPokemon.css'
 import '../../CSS/typePokemon.css'
 import '../../CSS/favStats.css'
-import { setFavPokemon } from '../helpers/localStorage'
+import { setFavPokemon, excludePokemon } from '../helpers/localStorage'
 
 function PokemonInfo() {
   const [pokeInfo, setPokeInfo] = useState();
@@ -28,13 +28,13 @@ function PokemonInfo() {
     const pokemon = {
       name: pokeInfo.name
     }
-    console.log(pokemon);
-
+    
     if(savePokemon){
-      setFavPokemon(pokemon);
       console.log('true');
+      setFavPokemon(pokemon);
     }else {
       console.log('false');
+      excludePokemon(pokemon)
     }
   }
 
