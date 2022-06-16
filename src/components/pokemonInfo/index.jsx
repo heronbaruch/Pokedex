@@ -23,14 +23,11 @@ function PokemonInfo() {
     }
     const verificCheck = (pokeName) => {
       const local = localStorage.getItem('pokemon');
-      console.log(pokeName)
       if (local) {
         if(local.includes(pokeName)){
-          setSavePokemon(true)
-          console.log(savePokemon);
+          return setSavePokemon(true)
         }else{
           setSavePokemon(false)
-          console.log('achou não em')
         }
       }
     };
@@ -67,7 +64,7 @@ function PokemonInfo() {
         <input 
           type="checkbox" 
           onClick={() => favPokemon(!savePokemon)}
-          ischecked={ savePokemon }
+          checked={ savePokemon }
         />
           <span className="checkmark"></span>
       </label>
