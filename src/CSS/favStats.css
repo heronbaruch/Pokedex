@@ -1,0 +1,56 @@
+/* Customize the label (the favStats) */
+.favStats {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.favStats input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 30px;
+  background-image: url(../images/open-pokeball.png);
+  background-size: contain;
+}
+
+/* On mouse-over, add a grey background color */
+.favStats:hover input ~ .checkmark {
+  height: 31px;
+  width: 30px;
+  background-image: url(../images/mid-pokeball.png);
+  background-size: contain;
+}
+
+/* When the checkbox is checked, add a blue background */
+.favStats input:checked ~ .checkmark {
+  height: 30px;
+  width: 30px;
+  background-image: url(../images/closed-pokeball.png);
+  background-size: contain;
+}
+
+
+
+/* Show the checkmark when checked */
+.favStats input:checked ~ .checkmark:after {
+  display: block;
+}

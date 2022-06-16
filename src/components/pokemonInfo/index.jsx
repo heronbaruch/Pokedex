@@ -5,9 +5,12 @@ import Loading from '../Loading'
 import Pearl from '../Pearl'
 import '../../CSS/infoPokemon.css'
 import '../../CSS/typePokemon.css'
+import '../../CSS/favStats.css'
+import { setFavPokemon, excludePokemon } from '../helpers/localStorage'
 
 function PokemonInfo() {
   const [pokeInfo, setPokeInfo] = useState();
+  const [savePokemon, setSavePokemon] = useState();
   let { name } = useParams();
 
   useEffect(() => {
@@ -16,9 +19,36 @@ function PokemonInfo() {
       const response = await fetch(URL);
       const dataJson = await response.json();
       setPokeInfo(dataJson);
+      verificCheck(dataJson.name)
     }
+    const verificCheck = (pokeName) => {
+      const local = localStorage.getItem('pokemon');
+      if (local) {
+        if(local.includes(pokeName)){
+          return setSavePokemon(true)
+        }else{
+          setSavePokemon(false)
+        }
+      }
+    };
     fetchPic(name);
-  }, [name])
+  }, [name, savePokemon])
+
+  const favPokemon = (savePokemon) =>{
+    setSavePokemon(savePokemon)
+    const pokemon = {
+      name: pokeInfo.name
+    }
+    if(savePokemon){
+      console.log('true');
+      setFavPokemon(pokemon);
+    }else {
+      console.log('false');
+      excludePokemon(pokemon);
+    }
+  }
+
+  
 
   return(
 
@@ -30,10 +60,19 @@ function PokemonInfo() {
         pokeInfo ?
         (
        <>
+      <label className="favStats">
+        <input 
+          type="checkbox" 
+          onClick={() => favPokemon(!savePokemon)}
+          defaultChecked={ savePokemon }
+        />
+          <span className="checkmark"></span>
+      </label>
+
        <div className="screens">
        <div className="backgroundInfo">
         <div className="screenStatus">
-            <p className="name">{ `${pokeInfo.name} #${pokeInfo.order}` }</p>
+            <p className="name">{ `${pokeInfo.name} #${pokeInfo.id}` }</p>
           <img
               alt={`${pokeInfo.name} pic`}
               src={pokeInfo.sprites.front_default}
@@ -41,7 +80,6 @@ function PokemonInfo() {
         </div>
       </div>
       {/* renderiza status do pokemon */}
-      {/* <h3>Status</h3> */}
               <div className="backgroundStatus">
                 <div className="screenStatus">
                   <div>

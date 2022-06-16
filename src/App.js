@@ -17,10 +17,12 @@ function App() {
         <Route 
           path="/pokemon-detail/:name"
           component={ PokemonInfo }
+          exact
         />
         <Route 
           path="*"
           component={ NotFound }
+          exact
         />
       </Switch >
     </Provider>

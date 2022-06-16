@@ -5,6 +5,9 @@
   padding: 20px;
   padding-top: 10px;
   color: #DEDEDE;
+  height:100%;
+  width: 100%;
+  position:absolute;
 }
 
 .screens {
@@ -50,6 +53,8 @@
   padding: 10px;
   color: #DEDEDE;
   height: auto;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .status {
