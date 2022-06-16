@@ -64,7 +64,7 @@ function PokemonInfo() {
         <input 
           type="checkbox" 
           onClick={() => favPokemon(!savePokemon)}
-          checked={ savePokemon }
+          defaultChecked={ savePokemon }
         />
           <span className="checkmark"></span>
       </label>
