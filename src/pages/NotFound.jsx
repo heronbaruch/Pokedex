@@ -1,12 +1,12 @@
 import React from "react";
-
+import '../CSS/404.css'
 
 function NotFound() {
   return (
     <div>
-      <p>
-        {`this pokemon not found :(`}
-      </p>
+      <h1>
+        {`404 this pokemon not found :(`}
+      </h1>
     </div>
   );
 }
