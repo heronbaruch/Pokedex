@@ -53,7 +53,7 @@ function PokemonInfo() {
   return(
 
     <div className="bodyInfo">
-      <Link to="/">
+      <Link to="/Xininhodex">
       <Pearl />
       </Link>
       {
