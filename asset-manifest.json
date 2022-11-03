@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Xininhodex/static/css/main.f7a884ae.css",
-    "main.js": "/Xininhodex/static/js/main.d991bcef.js",
+    "main.js": "/Xininhodex/static/js/main.c3eeb7c1.js",
     "static/js/787.7e0b23c5.chunk.js": "/Xininhodex/static/js/787.7e0b23c5.chunk.js",
     "index.html": "/Xininhodex/index.html",
     "main.f7a884ae.css.map": "/Xininhodex/static/css/main.f7a884ae.css.map",
-    "main.d991bcef.js.map": "/Xininhodex/static/js/main.d991bcef.js.map",
+    "main.c3eeb7c1.js.map": "/Xininhodex/static/js/main.c3eeb7c1.js.map",
     "787.7e0b23c5.chunk.js.map": "/Xininhodex/static/js/787.7e0b23c5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f7a884ae.css",
-    "static/js/main.d991bcef.js"
+    "static/js/main.c3eeb7c1.js"
   ]
 }
