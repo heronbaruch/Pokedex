@@ -1,6 +1,6 @@
 <h1 align="center"> Xininhodex </h1>
 
-<p align="center">
+<p align="center" href="https://heronbaruch.github.io/Xininhodex/">
   <img src="./src/images/capaProjeto.png" title="imagem da aplicação exibindo pokemon's, sua imagem nome e os tipos deles" alt="imagem da aplicação exibindo pokemon's, sua imagem nome e os tipos deles">
 </p>
 
